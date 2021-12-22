@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Finanças</title>
+  </head>
+  <body>
+    <div id="dimmer"></div>
+    <header class="banner">
+      <img src="./assets/logo.svg" alt="Logo Dev Finança">
+    </header>
+    <main>
+
+      <section id="balance">
+        <h2 class="sr-only">Balanço</h2>
+        <div class="cards">
+          <div class="card inCard">
+            <div class="cardInfo">
+              <div class="cardTitle">Entradas</div>
+              <div class="cardSymbol">
+                <img src="./assets/income.svg" alt="Imagem de entradas">
+              </div>
+            </div>
+            <div class="cardValue">R$ 0,00</div>
+          </div>
+  
+          <div class="card outCard">
+            <div class="cardInfo">
+              <div class="cardTitle">Saídas</div>
+              <div class="cardSymbol">
+                <img src="./assets/expense.svg" alt="Imagem de saídas">
+              </div>
+            </div>
+            <div class="cardValue">R$ 0,00</div>
+          </div>
+  
+          <div class="card totalCard">
+            <div class="cardInfo">
+              <div class="cardTitle">Total</div>
+              <div class="cardSymbol">
+                <img src="./assets/total.svg" alt="imagem de total">
+              </div>
+            </div>
+            <div class="cardValue">R$ 0,00</div>
+          </div>
+        </div>
+      </section>
+  
+      <section id="transactions">
+        <h2 class="sr-only">Transações</h2>
+
+        <a href="#" class="add-transaction">+ Nova Transação</a>
+
+        <table id="transaction">
+
+            <colgroup>
+              <col span="1" style="width: 45%;">
+              <col span="1" style="width: 35%;">
+              <col span="1" style="width: 15%;">
+              <col span="1" style="width: 5%;">
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+             
+            </tbody>
+
+        </table>
+      </section>
+        
+      <div class="modal">
+        <h2>Nova Transação</h2>
+        <form action="" id="new-transaction" autocomplete="off" >
+          <label class="sr-only" for="description"></label>
+          <input type="text" name="description" id="description" class="field" placeholder="Descrição..." data-rules="required">
+          
+          <label class="sr-only" for="numberValue"></label>
+          <input type="number" name="numberValue" id="numberValue" class="field" placeholder="0,00" step="any" data-rules="required|amount">
+          <p>Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</p>
+
+          <label class="sr-only" for="inputData"></label>
+          <input type="date" name="inputData" id="inputData" class="field" placeholder="dd/mm/aaaa" data-rules="required|date">
+
+          <div class="buttons">
+            <label class="sr-only" for="cancel-btn"></label>
+            <input type="button" value="Cancelar" name="cancel-btn" id="cancel-btn">
+
+            <label class="sr-only" for="save-btn"></label>
+            <input type="submit" value="Salvar" name="save-btn" id="save-btn">
+          </div>
+        </form>
+      </div>
+  
+    </main>
+
+    <script src="./scripts/dimmer.js"></script>
+    <script src="./scripts/storage.js"></script>
+    <script src="./scripts/validator.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
